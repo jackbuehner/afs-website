@@ -4,7 +4,21 @@
 
 $primary: #002347;
 $secondary: #fdc632;
+$logo-width: 50px;
+$logo-height: 50px;
+$logo-overlay-offset: 10px;
 
+.img-logo-overlay {
+  width: $logo-width;
+  height: $logo-height;
+  position: relative;
+  top: $logo-overlay-offset;
+  left: calc(100% - #{$logo-width} - #{$logo-overlay-offset});
+  opacity: 0.5;
+}
+img.hidden {
+  display: none;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -245,7 +259,7 @@ article {
 #masks container {
   > div {
     display: flex;
-    @media (max-width: 900px) {
+    @media (max-width: 700px) {
       flex-direction: column-reverse;
     }
     > div {
@@ -254,10 +268,27 @@ article {
       margin: 0 15px;
     }
     .face-masks-image-wrapper {
+      padding: 0;
+      background-image: url(/files/hunt-thanks.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: top;
       min-width: 400px;
-      border: 1px solid rgba(0,0,0,0.15);
-      @media (max-width: 900px) {
+      @media (max-width: 800px) {
+        min-width: 350px;
+      }
+      @media (max-width: 750px) {
+        min-width: 300px;
+      }
+      @media (max-width: 700px) {
         min-width: unset;
+        min-height: 350px;
+        background-size: cover;
+        background-position-y: center;
+      }
+      @media (max-width: 550px) {
+        min-height: 250px;
       }
     }
   }
