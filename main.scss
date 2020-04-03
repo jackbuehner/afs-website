@@ -350,8 +350,8 @@ article {
   text-align: center;
   > div {
     display: inline-block;
-    padding: 0 10px;
-    > img {
+    padding: 0 14px;
+    > a img {
       max-height: 140px;
       @media (max-width: 900px) {
         max-height: 100px;
