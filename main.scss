@@ -342,11 +342,24 @@ article {
     grid-template-columns: 1fr 400px;
     grid-gap: 30px;
     @media (max-width: 900px) {
+      grid-template-columns: 1fr 300px;
+    }
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr 250px;
+    }
+    @media (max-width: 750px) {
+      grid-template-columns: 1fr 200px;
+    }
+    @media (max-width: 600px) {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
     }
+    iframe {
+      border-radius: $border-radius;
+    }
     > div#contact {
       scroll-margin-top: 60px;
+      display: none;
       label {
         font-size: 15px;
         display: block;
