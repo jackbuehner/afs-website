@@ -439,6 +439,26 @@ footer container {
     }
   }
 }
+#photoGallery container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .gallery {
+    columns: 369px 3;
+    column-gap: 10px;
+    figure {
+      margin: 10px 0;
+      &:first-of-type {
+        margin-top: 0;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
 *:focus-visible {
   outline: 2px solid #7c7c7c;
   outline-offset: -2px;
