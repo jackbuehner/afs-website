@@ -11,20 +11,31 @@ $on-primary: #e0e0e0;
 $on-secondary: #212121;
 
 $border-radius: 3px;
-$logo-width: 50px;
-$logo-height: 50px;
+$logo-width: 70px;
+$logo-height: 70px;
+$logo-width-sm: 50px;
+$logo-height-sm: 50px;
 $logo-overlay-offset: 10px;
 
 .img-logo-overlay {
-  width: $logo-width;
-  height: $logo-height;
+  width: $logo-width-sm;
+  height: $logo-height-sm;
   position: relative;
   top: $logo-overlay-offset;
-  left: calc(100% - #{$logo-width} - #{$logo-overlay-offset});
+  left: calc(100% - #{$logo-width-sm} - #{$logo-overlay-offset});
   opacity: 0.5;
 }
 img.hidden {
   display: none;
+}
+.logo {
+  width: $logo-width;
+  height: $logo-height;
+  fill: $on-primary;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: relative;
 }
 .hide-desktop {
   @media (min-width: 901px) {
