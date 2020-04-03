@@ -1,4 +1,4 @@
-<a href="{% if page.title != 'index' %}index{% endif %}#cta" {% if page.title == 'index' %}onclick="toggleNav()"{% endif %}>Home</a>
+<a href="{% if page.title != 'index' %}index{% endif %}#cta" {% if page.title == 'index' %}onclick="toggleNav()"{% endif %} class="hide-desktop">Home</a>
 <a href="{% if page.title != 'index' %}index{% endif %}#about" {% if page.title == 'index' %}onclick="toggleNav()"{% endif %}">About</a>
 <a href="{% if page.title != 'index' %}index{% endif %}#howHelp" {% if page.title == 'index' %}onclick="toggleNav()"{% endif %}">Volunteer & Donate</a>
 <a href="{% if page.title != 'index' %}index{% endif %}#sponsors" {% if page.title == 'index' %}onclick="toggleNav()"{% endif %}">Sponsors</a>

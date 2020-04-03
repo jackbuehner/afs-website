@@ -26,6 +26,16 @@ $logo-overlay-offset: 10px;
 img.hidden {
   display: none;
 }
+.hide-desktop {
+  @media (min-width: 901px) {
+    display: none;
+  }
+}
+.hide-mobile {
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -81,7 +91,7 @@ header {
   background-color: $background;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1), 0 4px 5px 0 rgba(0,0,0,0.07), 0 1px 10px 0 rgba(0,0,0,0.06);
   overflow: hidden;
-  div:first-of-type {
+  div.title {
     float: left;
     h1 {
       line-height: 60px;
@@ -124,7 +134,7 @@ header {
       }
     }
   }
-  div:last-of-type {
+  div.nav {
     float: right;
     @media (max-width: 900px) {
       position: absolute;
