@@ -1,0 +1,72 @@
+---
+layout: default
+title: contact
+header: Contact us
+buttons: false
+---
+<section id="contactEmail">
+  <container>
+    <h3>Directly contact us with email</h3>
+    <p style="text-align: center;">Reach us via email at <a href="mailto:contact@atlantafaceshields.com">contact@atlantafaceshields.com</a></p>
+  </container>
+</section>
+<section id="contactForm">
+  <container>
+    <h3>Use this form to request PPE, sign up to volunteer, or become a sponsor</h3>
+      <button onclick="toggleFormSize()" class="btn" style="height: 28px; line-height: 28px; padding: 0 8px;" id="fullscreenButton">Toggle Fullscreen</button> 
+      <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSe4r2myDcOc0bcBqfWJd-PI18qlEEkiMLs2hrN0xNh_j7_AdQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" style="height: 60vh; width: 100%; z-index: unset; position: unset;">Loading…</iframe>
+  </container>
+</section>
+<style>
+  section container {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  iframe {
+    top: 60px;
+    left: 0;
+  }
+  #contactForm container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+  }
+  h2 {
+    margin: 10px 0;
+  }
+</style>
+<script>
+  function toggleFormSize() {
+    let form = document.getElementById("form");
+    let button = document.getElementById("fullscreenButton");
+
+    if (form.style.height === "60vh") {
+      form.style.height = "calc(100vh - 60px)";
+      form.style.width = "100vw";
+      form.style.zIndex = "8";
+      button.style.zIndex = "9";
+      form.style.position = "absolute";
+      form.style.background = "white";
+      document.documentElement.style.overflow = "hidden";
+      button.style.position = "absolute";
+      button.style.top = "60px";
+      button.style.left = "50%";
+      button.style.transform = "translateX(-50%)";
+      form.style.backgroundColor = "#f2f4f6";
+      window.scrollTo(0, 0);
+    } else {
+      form.style.height = "60vh";
+      form.style.width = "100%";
+      form.style.zIndex = "unset";
+      button.style.zIndex = "unset";
+      form.style.position = "unset";
+      document.documentElement.style.overflow = "auto";
+      button.style.position = "unset";
+      button.style.top = "unset";
+      button.style.left = "unset";
+      button.style.transform = "unset";
+      form.style.backgroundColor = "unset";
+    }
+  }
+</script>
