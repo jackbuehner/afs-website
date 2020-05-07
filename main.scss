@@ -203,7 +203,7 @@ header {
       font-weight: 500;
       font-family: Rubik, sans-serif;
       padding: 21px 15px;
-      transition: padding 0.2s;
+      transition: padding 0.2s, letter-spacing 0.2s;
       &:hover {
         background-color: $primary;
         color: $secondary;
@@ -217,10 +217,14 @@ header {
         width: 100vw;
         padding: 0 18px;
       }
-      @media (max-width: 1000px) and (min-width: 901px) {
+      @media (max-width: 970px) and (min-width: 901px) {
+        padding: 21px 3px;
+        letter-spacing: -0.8px;
+      }
+      @media (max-width: 1040px) and (min-width: 971px) {
         padding: 21px 4px;
       }
-      @media (max-width: 1200px) and (min-width: 1001px) {
+      @media (max-width: 1200px) and (min-width: 1041px) {
         padding: 21px 10px;
       }
     }
