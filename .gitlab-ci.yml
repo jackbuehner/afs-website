@@ -1,0 +1,38 @@
+image: ruby:2.5.7
+
+variables:
+  JEKYLL_ENV: production
+  DOCKER_DRIVER: overlay2
+  LC_ALL: C.UTF-8
+
+cache:
+  paths:
+  - vendor/
+
+before_script:
+  - gem install bundler
+  - bundle install --path vendor
+
+test:
+  stage: test
+  script:
+    - bundle exec jekyll build -d test --future
+    - surge test --domain $CI_MERGE_REQUEST_ID-afs.surge.sh
+  artifacts:
+    paths:
+      - test
+  only:
+    - merge_requests
+
+pages:
+  stage: deploy
+  script:
+    - apt-get update -qq && apt-get install -y -qq lftp
+    - bundle exec jekyll build -d public --future
+    - lftp -e "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rnev ./public ./public --delete --verbose --parallel=10"
+  artifacts:
+    paths:  
+      - public
+  only:
+    - master
+
