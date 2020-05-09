@@ -1,0 +1,29 @@
+<html>
+  {% include page-components/head.html %}
+  <link href="/markdown.css" rel="stylesheet">
+  <body>
+    {% include page-components/header.html %}
+    <section id="cta" class="color">
+      <container>
+        <h2>{{ page.title }}</h2>
+        <p>{{ page.subtitle }}</p>
+      </container>
+    </section>
+    <section class="markdown">
+      <container>
+        <div class="toc">
+          <p>Contents</p>
+          {% include toc.html html=content ordered=true %}
+        </div>
+        {{ content }}
+      </container>
+    </section>
+    {% include page-components/footer.html %}
+    {% include page-components/scripts.html %}
+  </body>
+  <style>
+    container {
+      padding: 50px !important;
+    }
+  </style>
+</html>

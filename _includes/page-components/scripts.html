@@ -1,0 +1,22 @@
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+<script>
+  function toggleNav() {
+    var x = document.getElementById("appbar");
+    let intViewportWidth = window.innerWidth;
+
+    if (x.style.height === "60px" && intViewportWidth <= "900") {
+      x.style.height = "100vh";
+    } else {
+      x.style.height = "60px";
+    }
+  }
+</script>

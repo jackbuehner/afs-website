@@ -275,10 +275,13 @@ article {
 }
 #cta container {
   p {
-    font-family: Rubik, sans-serif;
-  font-size: 30px;
-  font-weight: 500;
-  text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    margin-top: -14px;
+    margin-bottom: 20px;
   }
   > div {
     text-align: center;
